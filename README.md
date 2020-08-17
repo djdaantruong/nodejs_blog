@@ -34,7 +34,7 @@ Server side rendering: thường sử dụng ở các web CEO, web tin tức,..
 
 Ưu điểm: tốt cho CEO, content chứa hết mã và chữ. Request đầu tiên luôn nhanh hơn. Nên chọn, thời gian phát triển ứng dụng nhanh hơn (tác vụ nhỏ, dài hạn thì thua client), code nhiều hơn
 
-Client side rendering: 
+Client side rendering
 
 Ưu điểm: tạo trải nghiệm người dùng tốt hơn, tải về trước bộ khung, cần gì thì tải thêm
 
@@ -56,7 +56,7 @@ Học cách sử dụng thư viện nodemon và cách debug nodejs
 
 Nodemon: giúp restarting server khi có thay đổi file, tiện lợi khi phát triển app
 
-Cài đặt và cách sử dụng: 
+Cài đặt và cách sử dụng
 
 npm i nodemon —save—dev
 
@@ -72,7 +72,7 @@ git add README.md
 
 git commit -m"first commit"
 
-git remote add origin https://github.com/djdaantruong...
+git remote add origin
 
 git push -u origin master
 
@@ -85,6 +85,7 @@ Thư viện morgan: cho phép quan sát được các console.log request từ c
 Thư viện nào không sử dụng trong dự án thật thì cài vào —dev cho các dev sử dụng trong quá trình phát triển ứng dụng
 
 ## Kiến thức cốt lõi
+
 ### Template engines (handlebars)
 
 - Cài đặt: npm install express-handlebars
