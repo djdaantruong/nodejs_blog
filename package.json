@@ -18,6 +18,14 @@
     "url": "https://github.com/djdaantruong/nodejs_blog/issues"
   },
   "homepage": "https://github.com/djdaantruong/nodejs_blog#readme",
+  "lint-staged": {
+    "src/**/*.{js,json,scss": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
@@ -25,6 +33,9 @@
     "nodemon": "^2.0.4"
   },
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.13",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.1.1"
   }
 }
