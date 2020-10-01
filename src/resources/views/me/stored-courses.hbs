@@ -16,7 +16,7 @@
             <option value="delete">Xoá</option>
         </select>
 
-        <button class="btn btn-primary btn-sm check-all-submit-btn disabled">Thực hiện</button>
+        <button class="btn btn-primary btn-sm check-all-submit-btn" disabled>Thực hiện</button>
     </div>
 
     <div class="mt-4">
@@ -87,11 +87,14 @@
     document.addEventListener('DOMContentLoaded', function() {
         var courseId;
         var deleteForm = document.forms['delete-course-form'];
-        var containerForm = document.forms['container-form'];
+        //var containerForm = document.forms['container-form'];
+        var containerForm = $('form[name="container-form"]');
         var btnDeleteCourse = document.getElementById('btn-delete-course');
         var checkboxAll = $('#checkbox-all'); //jquery bắt sự kiện btn => lấy ra jquery element 
         var courseItemCheckbox = $('input[name="courseIds[]"]');
         var checkAllSubmitBtn = $('.check-all-submit-btn');
+
+        console.log(containerForm);
         
         // When dialog confirm clicked
         $('#delete-course-modal').on('show.bs.modal', function (event) {
@@ -119,21 +122,21 @@
             renderCheckAllSubmitBtn();
         });
 
-        // Check all submit clicked
-        checkAllSubmitBtn.on('submit', function(e) {
-            var isSubmitable = !$(this).hasClass('disabled');
+        {{!-- // Check all submit clicked
+        containerForm.on('submit', function(e) {
+            var isSubmitable = !checkAllSubmitBtn.hasClass('disabled');
             if (!isSubmitable) {
                 e.preventDefault();
             }
-        });
+        }); --}}
 
         // Re-render check all submit button
         function renderCheckAllSubmitBtn() {
             var checkedCount = $('input[name="courseIds[]"]:checked').length;
             if (checkedCount > 0){
-                checkAllSubmitBtn.removeClass('disabled'); //method xoá class trên thẻ html
+                checkAllSubmitBtn.attr('disabled', false); //method xoá attribute trên thẻ html
             } else {
-                checkAllSubmitBtn.addClass('disabled');
+                checkAllSubmitBtn.attr('disabled', true);
             }
         }
 
